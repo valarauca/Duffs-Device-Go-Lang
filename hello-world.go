@@ -10,8 +10,6 @@ func memcp( in []byte, out[]byte, count int ) {
 	i := 0
 	for i < count {
 		switch (count-i)/8 {
-			default:
-				fallthrough
 			case 0:
 				out[i] = in[i]
 				i++
@@ -43,7 +41,6 @@ func memcp( in []byte, out[]byte, count int ) {
 			case 1:
 				out[i] = in[i]
 				i++
-				break
 		}
 	}
 }
